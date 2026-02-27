@@ -1,10 +1,11 @@
-# Multi-Agent Digest
+# Multi-Agent Orchestration
 
 A multi-agent pipeline for ingesting, summarizing, prioritizing, and formatting content into a digest.
 
-## Structure
+## Project Structure
 
 ```
+multi-agent-orchestration/
 ├── agents/
 │   ├── ingestor/     # Loads and preprocesses raw input files
 │   ├── summarizer/   # Summarizes ingested content
@@ -18,9 +19,14 @@ A multi-agent pipeline for ingesting, summarizing, prioritizing, and formatting 
 └── docker-compose.yml
 ```
 
+## Prerequisites
+
+- Python 3.11+
+- Docker and Docker Compose
+
 ## Quick Start
 
-1. Copy `.env` and add your API keys.
+1. Add your API keys to `.env`.
 2. Place raw files in `data/input/`.
 3. Run with Docker Compose:
 

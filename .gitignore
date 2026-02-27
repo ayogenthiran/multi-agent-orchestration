@@ -1,0 +1,28 @@
+# Ignore cursor AI rules
+.cursor/rules/codacy.mdc
+
+# Environment
+.env
+.env.local
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.venv/
+env/
+
+# Output
+output/*
+!output/.gitkeep
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

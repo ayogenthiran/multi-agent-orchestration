@@ -1,0 +1,30 @@
+services:
+  ingestor:
+    build: ./agents/ingestor
+    volumes:
+      - ./data/input:/app/data/input
+    environment:
+      - ENV_FILE=.env
+
+  summarizer:
+    build: ./agents/summarizer
+    depends_on:
+      - ingestor
+    environment:
+      - ENV_FILE=.env
+
+  prioritizer:
+    build: ./agents/prioritizer
+    depends_on:
+      - summarizer
+    environment:
+      - ENV_FILE=.env
+
+  formatter:
+    build: ./agents/formatter
+    depends_on:
+      - prioritizer
+    volumes:
+      - ./output:/app/output
+    environment:
+      - ENV_FILE=.env
